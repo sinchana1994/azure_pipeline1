@@ -1,0 +1,17 @@
+trigger:
+  - main
+
+jobs:
+- job: JobA
+  displayName: 'Job A'
+  steps:
+  - script: ec 'Task A'
+    displayName: 'Task A'
+
+- job: JobB
+  displayName: 'Job B'
+  condition: failed()
+  dependsOn: JobA
+  steps:
+  - script: echo 'Task B'
+    displayName: 'Task B'
