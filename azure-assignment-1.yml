@@ -1,0 +1,21 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: ec " Task 1'
+    displayName: 'Task 1'
+
+# Add your actual task configuration here
+  - script: ec 'Task 2'
+    displayName: 'Task 2'
+
+# Add your actual task configuration here
+# Add more tasks as needed
+  - script: echo 'AuditLog'
+    displayName: 'AuditLog'
+    condition: failed()
+
+# Add your actual AuditLog task configuration here
