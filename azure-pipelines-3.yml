@@ -1,0 +1,17 @@
+
+trigger:
+  - main
+
+
+variables:
+  myVariable: false
+
+jobs:
+- job: MyJob
+  steps:
+  - script: echo This task will always run
+  
+  - script: echo This task will only run if myVariable is true
+    condition: eq(variables['myVariable'], 'true')
+
+  - script: echo This task will always run
